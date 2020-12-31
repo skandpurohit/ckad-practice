@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-bb
+  name: nginx-bb
+spec:
+  initContainers:
+  - args: #
+    - /bin/sh #
+    - -c #
+    - wget -O /work-dir/index.html http://neverssl.com/online #
+    image: busybox
+    name: busybox
+    volumeMounts:
+    - name: nbv
+      mountPath: /work-dir
+  containers:
+  - image: nginx
+    name: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: nbv
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: nbv
+    emptyDir: {}

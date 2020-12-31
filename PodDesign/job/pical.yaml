@@ -1,0 +1,66 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  creationTimestamp: "2020-12-30T22:03:06Z"
+  labels:
+    controller-uid: b37aab0e-f482-4c8f-9617-b6b37484814f
+    job-name: pical
+  managedFields:
+  - apiVersion: batch/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:backoffLimit: {}
+        f:completions: {}
+        f:parallelism: {}
+        f:template:
+          f:spec:
+            f:containers:
+              k:{"name":"pical"}:
+                .: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2020-12-30T22:03:06Z"
+  name: pical
+  namespace: default
+  resourceVersion: "998555"
+  selfLink: /apis/batch/v1/namespaces/default/jobs/pical
+  uid: b37aab0e-f482-4c8f-9617-b6b37484814f
+spec:
+  backoffLimit: 6
+  completions: 1
+  parallelism: 1
+  selector:
+    matchLabels:
+      controller-uid: b37aab0e-f482-4c8f-9617-b6b37484814f
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        controller-uid: b37aab0e-f482-4c8f-9617-b6b37484814f
+        job-name: pical
+    spec:
+      containers:
+      - image: perl
+        imagePullPolicy: Always
+        name: pical
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Never
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
