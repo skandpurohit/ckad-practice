@@ -7,3 +7,7 @@ A set of exercises that helped me to prepare for CKAD [Certified Kubernetes Appl
 - [Core Concepts - 13%]
 - [Multi Container Pods - 10%]
 - [Pod Design - 20%]
+- [Observability - 18%]
+- [Services & Networking - 13%]
+- [State Persistence - 8%]
+- [Configuration - 18%]
